@@ -268,3 +268,43 @@ def sports():
 # 2: If sum (n) < n.
 # 3: If sum (n) > n.
 
+def divisors():
+  
+  #part a
+  def sum(a):
+    s = 0
+    for i in range (1, (a//2)+1):  # // rounds down
+      # print(i)
+      if a%i == 0:
+        s += i
+    return s
+  
+  # print(sum(100))
+
+  def is_amicable(a, b):
+    return sum(a) == b and sum(b) == a 
+
+  # 220 and 284
+  # print (is_amicable(220, 284))
+
+  
+
+divisors()
+
+# Question.
+# Write a function that accepts an integer and prints the integer with the digits reversed.
+
+
+
+
+# Question.
+# Write a function that accepts a string (aka an array of characters) and a char variable `ch` and replaces all instances of ch in the string with "$".
+
+
+# Question:
+# Write a function that accepts a character ch and a string s and returns true if ch is a letter in s.
+
+
+# Question:
+# https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1601_1_19.pdf
+# Q 2 & 3

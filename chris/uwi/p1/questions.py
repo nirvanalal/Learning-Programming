@@ -134,10 +134,9 @@ def hire_purchase():
 # Table 1: Triathlon Participation Fees
 
 
-
 def sports():
 
-  import sys
+  import sys  # system.
 
   def is_elite(s, b, r):
     return s+b+r < (60*75)
@@ -147,14 +146,22 @@ def sports():
     lines = [line.rstrip() for line in f.readlines()]
 
   # Looping over all lines.
-  winner_id, winner_total = 0, sys.maxint
+  id1, t1, = "dont't-care", sys.maxint
+  s1, s2, s1_id, s2_id = sys.maxint, sys.maxint, "don't-care", "don't-care"
   m, f, n, a = 0, 0, 0, 0
+
   for line in lines:
     id, cat, sm, ss, bm, bs, rm, rs = line.split()
-    sm, ss, bm, bs, rm, rs = int(sm), int(ss), int(bm), int(bs), int(rm), int(rs)
+    s = int(sm)*60 + int(ss)
+    b = int(bm)*60 + int(bs)
+    r = int(rm)*60 + int(rs)
 
-    total = (sm+bm+rm)*60 + (ss+bs+rs)
-    print(id, cat, total, is_elite)
+    t = s + b + r
+    print(id, cat, t, is_elite(s, b, r))
+    
+    # open('output.txt', 'a')
+    # output = open('output.txt', 'w')              
+    # output.write(id, cat, total_time, is_elite)
 
     # M, F, N, A.
     if cat == 'M':
@@ -167,19 +174,27 @@ def sports():
       a += 1
 
     # Finding the winner (shortest time taken).
-    if total < winner_total:
-      winner_total = total
-      winner_id = id
+    if t < t1:
+      t1 = t
+      id1 = id
 
-  
+    # Finding the best sr 
+    # https://jamboard.google.com/d/1cnlQ8HecdyQ_ua1FVaNPO7DN6F_oa6r2t5IGbXmUaxo/viewer?f=1
+    if s < s1:
+      s2 = s1
+      s1 = s
+      s2_id = s1_id
+      s1_id = id
+    elif s < s2:
+      s2 = s
+      s2_id = id
+
+
   # print("A: ", a, "B: ", b)
+  # print("Winner ID:", winner_id)
+  # print("Best Swimmer ID:", best_s_id, "Runner up Swimmer ID:", runner_s_id)
     
-
-    
-    
-
 # sports()
-
 
 
 
@@ -239,7 +254,7 @@ def sports():
 
 
 
-# Question
+# Question.
 # The sum of all the divisors of an integer a including 1 but not including a is denoted by sum (a).
 # For example, sum (6) = 1 + 2 + 3, and sum (14) = 1 + 2 + 7.
 # (a) Write a function sum, which given an integer a, returns the sum of all the divisors of a.
@@ -252,3 +267,4 @@ def sports():
 # 1: If sum (n) == n.
 # 2: If sum (n) < n.
 # 3: If sum (n) > n.
+

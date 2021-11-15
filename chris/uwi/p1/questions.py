@@ -270,41 +270,117 @@ def sports():
 
 def divisors():
   
-  #part a
+  # part a
   def sum(a):
     s = 0
     for i in range (1, (a//2)+1):  # // rounds down
-      # print(i)
       if a%i == 0:
         s += i
     return s
   
   # print(sum(100))
 
+  # part b
   def is_amicable(a, b):
     return sum(a) == b and sum(b) == a 
 
   # 220 and 284
   # print (is_amicable(220, 284))
 
-  
+  # part c
+  def classify_number(a):
+    s = sum(a)
+    if s == a:
+      return 1
+    elif s < a:
+      return 2
+    return 3
 
-divisors()
-
-# Question.
-# Write a function that accepts an integer and prints the integer with the digits reversed.
+# divisors()
 
 
 
 
-# Question.
+
+# BAD QUESTION !!!
+# Question:
 # Write a function that accepts a string (aka an array of characters) and a char variable `ch` and replaces all instances of ch in the string with "$".
+
+def replace(A, ch):
+  B = ""
+  for c in A:
+    if c == ch:
+      B += "$"
+    else:
+      B += c
+  return B
+
+# print(replace("abcdefg", "c"))
+
+
 
 
 # Question:
 # Write a function that accepts a character ch and a string s and returns true if ch is a letter in s.
+def is_in(s, ch):
+  for c in s:
+    if c == ch:
+      return True
+  return False
+
+def is_in_pythonic_way(s, ch):
+  return ch in s
+
+# print(is_in("chris", "q"))
+# print(is_in_pythonic_way("chris", "c"))
+
+
 
 
 # Question:
+# Write a function that accept a year (int) and returns True if year is a leap year and false otherwise.
+def is_leap_year(y):
+  return y%400 == 0 or (y%4 == 0 and y%100 != 0)
+
+# print(is_leap_year(2014))
+
+
+
+
+# Question 3 in link below:
 # https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1601_1_19.pdf
-# Q 2 & 3
+# Q3
+
+def draw_stars(n):
+  print("*"*n)
+  
+def print_bow_tie(h):
+  for i in reversed(range(1, h+1)):  # or range(h+1, 1, -1)
+    draw_stars(i)
+  for i in range(1, h+1):
+    draw_stars(i)
+
+# OR
+def print_bow_tie_shorter(h):
+
+  def print_steps(h, rev=False):
+    r = range(1, h+1)
+    if rev:  # if paramter rev is True
+      r = reversed(r)
+    for i in r:
+      draw_stars(i)
+
+  print_steps(h, True)
+  print_steps(h)
+
+# print_bow_tie(10)
+# print_bow_tie_shorter(10)
+
+
+
+# Q 2
+
+
+
+# Question:
+# Write a function that accepts an integer and prints the integer with the digits reversed.

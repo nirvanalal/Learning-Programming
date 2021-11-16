@@ -109,8 +109,8 @@ def hire_purchase():
 # A competitor qualifies for the title “Elite” if the total time to complete all three events is at most 1 hour 15
 # minutes.
 # Write a program to read the data and send the following to a file, output.txt:
-# 1) For each competitor, output the competitor’s ID, category and total time.
-# 2) For each competitor also output whether or not the competitor is an Elite competitor.
+# 1.a) For each competitor, output the competitor’s ID, category and total time.
+# 1.b) For each competitor also output whether or not the competitor is an Elite competitor.
 
 # For part 2), you must write a function, isElite, which takes as parameters the competitor’s time in the
 # swim in seconds, the time in the bicycle ride in seconds, and the time in the run in seconds and returns
@@ -146,8 +146,8 @@ def sports():
     lines = [line.rstrip() for line in f.readlines()]
 
   # Looping over all lines.
-  id1, t1, = "dont't-care", sys.maxint
-  s1, s2, s1_id, s2_id = sys.maxint, sys.maxint, "don't-care", "don't-care"
+  id1, t1, = "dont't-care", sys.maxsize
+  s1, s2, s1_id, s2_id = sys.maxsize, sys.maxsize, "don't-care", "don't-care"
   m, f, n, a = 0, 0, 0, 0
 
   for line in lines:
@@ -157,6 +157,7 @@ def sports():
     r = int(rm)*60 + int(rs)
 
     t = s + b + r
+    print("Part 1")
     print(id, cat, t, is_elite(s, b, r))
     
     # open('output.txt', 'a')
@@ -189,10 +190,15 @@ def sports():
       s2 = s
       s2_id = id
 
+    def funds():
+      f = m*100 + f*75 + n*200
 
-  # print("A: ", a, "B: ", b)
-  # print("Winner ID:", winner_id)
-  # print("Best Swimmer ID:", best_s_id, "Runner up Swimmer ID:", runner_s_id)
+    print ('Part 3:')
+    print("M: ", m, "F: ", f, "N: ", n, "A: ", a)
+    print ("Part 4:")
+    print("Champion:", id1)
+    print("Best Swimmer ID:", s1_id, "Runner up Swimmer ID:", s2_id)
+    print('$', f)
     
 # sports()
 

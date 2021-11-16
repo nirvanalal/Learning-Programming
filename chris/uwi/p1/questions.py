@@ -366,7 +366,7 @@ def print_bow_tie(h):
   for i in range(1, h+1):
     draw_stars(i)
 
-# OR
+# OR Chris Version
 def print_bow_tie_shorter(h):
 
   def print_steps(h, rev=False):
@@ -382,6 +382,15 @@ def print_bow_tie_shorter(h):
 # print_bow_tie(10)
 # print_bow_tie_shorter(10)
 
+#OR
+def bow_tie(h):
+    list = range(1, h+1)
+    for i in list[:: -1]:
+      draw_stars(i)
+    for i in list:
+      draw_starts(i)
+
+# bow_tie(5)
 
 
 # Q 2

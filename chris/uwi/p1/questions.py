@@ -206,7 +206,7 @@ def sports():
     print("Best Swimmer ID:", s1_id, "Runner up Swimmer ID:", s2_id)
     print('$', f)
     
-sports()
+# sports()
 
 
 
@@ -349,6 +349,7 @@ def is_in_pythonic_way(s, ch):
 
 
 
+
 # Question:
 # Write a function that accept a year (int) and returns True if year is a leap year and false otherwise.
 def is_leap_year(y):
@@ -359,7 +360,9 @@ def is_leap_year(y):
 
 
 
-# Question 3 in link below:
+
+
+# Question:
 # https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1601_1_19.pdf
 # Q3
 
@@ -399,22 +402,98 @@ def bow_tie(h):
 # bow_tie(5)
 
 
-# Q 2
+
+
+
+
+
+# Q2a
 def minute():
-  v, d, min, v_e, v_r = 0
   v = int(input('V: '))
   d = int(input('D: '))
-  
+  i = 1
+  while v > 10 and i <= 20:
     v_e = d/100 * v
-    v_r = v - v_e
-      for i in min(1, 21)
+    v -= v_e
+    print('Minute: ', i, 'Vol escaped: ', v_e, 'Vol remaining: ', v)
+    i += 1
 
-        print ('Minute: ' min, 'Vol escaped: ' v_e, 'Vol remaining: ' v_r)
+# minute()
+
+
+# Q2bi
+def testHypot(n):
+  a = n*3
+  c = 0
+  while a > 0:
+    b = a%10
+    a = a//10
+    c += b
+    # OR.
+    # c += a%10
+    # a //= 10
+  return c%3 == 0
+
+# Q2bii
+
+def testHypot_b():
+  is_proven = True
+  for i in range(1, 10001):
+    if not testHypot(i):
+      is_proven = False
+      print(i)
+  if is_proven:
+    print('Proven')
+
+testHypot_b()
+
+
+
+
+
+
+
 
 
 
 # Question:
-# Write a function that accepts an integer and prints the integer with the digits reversed.
+# https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1100_2_12.pdf
+# Q2b
+# Write a function that accepts an integer and returns the integer with the digits reversed.
+
+
+
+
+
+
+
+
+# Question:
+# https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1100_2_12.pdf
+# Q2d
+# Write a function to check if a number is "perfect"
+# perfect number, a positive integer that is equal to the sum of its proper divisors. The smallest perfect number is 6, which is the sum of 1, 2, and 3 
+
+
+
+
+
+
+
+
+
+
+# Question:
+# https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1100_2_12.pdf
+# Q2e
+# Write a function to print the number of vowels in a word.
+
+
+
+
+
+
+
 
 
 
@@ -423,9 +502,49 @@ def minute():
 # Also find and print the sum of the sequence.
 
 
+
+
+
+
+
+
+
+
 # Question:
 # Write a function that returns True if n is a prime number, else False.
 
 
+
+
+
+
+
+
+
 # Question:
 # Write a function to sum all the numbers in an array, who has a factor of 5.
+
+
+
+
+
+
+
+
+
+
+# Question: 
+# Write a function that prints the binary representation of an integer (n) to the screen.
+
+
+
+
+
+
+
+
+# Question:
+# https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1100_1_12.pdf
+# Q2a
+# Write a function which, given an integer n, returns the number of digits in the integer.
+# For example, given 5017, the function returns 4.

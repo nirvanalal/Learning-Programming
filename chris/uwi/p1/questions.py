@@ -1,3 +1,5 @@
+# Question Pool: https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/results
+
 # Question:
 # Write a program, Fence, to calculate and print the amount and cost of the wire needed to fence a rectangular field. 1 meter of wire costs $25. The program allows the user to enter the length and width of the field in meters.
 
@@ -134,6 +136,10 @@ def hire_purchase():
 # Table 1: Triathlon Participation Fees
 
 
+'''
+1 M 
+'''
+
 def sports():
 
   import sys  # system.
@@ -200,7 +206,7 @@ def sports():
     print("Best Swimmer ID:", s1_id, "Runner up Swimmer ID:", s2_id)
     print('$', f)
     
-# sports()
+sports()
 
 
 
@@ -388,14 +394,38 @@ def bow_tie(h):
     for i in list[:: -1]:
       draw_stars(i)
     for i in list:
-      draw_starts(i)
+      draw_stars(i)
 
 # bow_tie(5)
 
 
 # Q 2
+def minute():
+  v, d, min, v_e, v_r = 0
+  v = int(input('V: '))
+  d = int(input('D: '))
+  
+    v_e = d/100 * v
+    v_r = v - v_e
+      for i in min(1, 21)
+
+        print ('Minute: ' min, 'Vol escaped: ' v_e, 'Vol remaining: ' v_r)
 
 
 
 # Question:
 # Write a function that accepts an integer and prints the integer with the digits reversed.
+
+
+
+# Question:
+# Write code to generate and print the numbers of this sequence: -4, 3, 10, 17, 24, 31, 38, 45.
+# Also find and print the sum of the sequence.
+
+
+# Question:
+# Write a function that returns True if n is a prime number, else False.
+
+
+# Question:
+# Write a function to sum all the numbers in an array, who has a factor of 5.

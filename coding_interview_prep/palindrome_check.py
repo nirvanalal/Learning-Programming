@@ -40,7 +40,7 @@ def is_palindrome(s):
   i, j = 0, len(s)-1
   while i < j:
     
-  
+
 
 
 

@@ -64,3 +64,5 @@ def is_palindrome(s):
 s = 'level'
 print(id(s))
 print (is_palindrome(s))
+
+#?

@@ -452,14 +452,11 @@ testHypot_b()
 
 
 
-
-
-
-
 # Question:
 # https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1100_2_12.pdf
 # Q2b
 # Write a function that accepts an integer and returns the integer with the digits reversed.
+
 
 
 

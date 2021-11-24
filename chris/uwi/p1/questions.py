@@ -445,7 +445,7 @@ def testHypot_b():
   if is_proven:
     print('Proven')
 
-testHypot_b()
+# testHypot_b()
 
 
 
@@ -457,6 +457,11 @@ testHypot_b()
 # Q2b
 # Write a function that accepts an integer and returns the integer with the digits reversed.
 
+def rev_int():
+  a = string(input("Integer: "))
+  for i in a:
+    print(a[::-1])
+rev_int()
 
 
 

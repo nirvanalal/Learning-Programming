@@ -458,16 +458,9 @@ def testHypot_b():
 # Write a function that accepts an integer and returns the integer with the digits reversed.
 
 def rev_int():
-  a = string(input("Integer: "))
-  for i in a:
-    print(a[::-1])
-rev_int()
-
-
-
-
-
-
+  a = (input("Integer: "))
+  print(a[::-1])
+# rev_int()
 
 
 # Question:
@@ -475,14 +468,14 @@ rev_int()
 # Q2d
 # Write a function to check if a number is "perfect"
 # perfect number, a positive integer that is equal to the sum of its proper divisors. The smallest perfect number is 6, which is the sum of 1, 2, and 3 
+def perf(n):
+  sum=0
+  for i in range(1, n):
+    if (n%i == 0):
+      sum += i
+  return sum == n
 
-
-
-
-
-
-
-
+# print(perf(28))
 
 
 # Question:
@@ -491,6 +484,16 @@ rev_int()
 # Write a function to print the number of vowels in a word.
 
 
+############SHIT###################################################
+def vow():
+  s = str(input('phrase: '))
+  num=0
+  for i in s:
+    if i == 'a' or 'e' or 'i' or 'o' or 'u':
+      num += 1
+    print(num)
+vow()
+    
 
 
 

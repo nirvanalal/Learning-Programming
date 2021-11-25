@@ -457,10 +457,42 @@ def testHypot_b():
 # Q2b
 # Write a function that accepts an integer and returns the integer with the digits reversed.
 
-def rev_int():
+#SHIT - works but not correct
+#it takes any "input" as a string automatically, not what question asks for
+def rev_inat():
   a = (input("Integer: "))
   print(a[::-1])
 # rev_int()
+
+#correct answer
+# a = 123
+# b = 3 , c = 12
+# a = 12
+# b = 2, c = 1
+# a = 1
+# b = 1, c = 0
+
+
+# ex: 123 -> 321
+def rev_int(a):
+  res = 0
+  
+  while a > 0:
+    b = a%10
+    c = a//10
+    res = res*10 + b
+    a = c  
+    
+# OPTIMAL
+def rev_int(a):
+  res = 0
+  while a > 0:
+    res = res*10 + a%10
+    a //= 10  #  a = a // 10
+  return res
+  
+# print(rev_int(123))
+
 
 
 # Question:
@@ -470,7 +502,7 @@ def rev_int():
 # perfect number, a positive integer that is equal to the sum of its proper divisors. The smallest perfect number is 6, which is the sum of 1, 2, and 3 
 def perf(n):
   sum=0
-  for i in range(1, n):
+  for i in range(1, (n/2)+1):
     if (n%i == 0):
       sum += i
   return sum == n
@@ -491,9 +523,37 @@ def vow():
   for i in s:
     if i == 'a' or 'e' or 'i' or 'o' or 'u':
       num += 1
-    print(num)
-vow()
-    
+  print(num)
+# vow()
+
+
+#works but not best
+def vow():
+  s = str(input('phrase: '))
+  num=0
+  for i in s:
+    if i == 'a' or i == 'e' or i == 'i' or i == 'o' or i == 'u':
+      num += 1
+  print(num)
+# vow()
+
+#optimal - sets and dictionaries are more efficent 
+def vow(word):
+  count = 0
+  vowels = {"a", "e", "i", "o", "u"}  # Set.
+  for letter in word:
+    if letter.lower() in vowels:
+      count += 1
+  print(count)
+# vow('ABC?')
+
+def lower(ch):
+  if ch >= "A" and ch <= "Z":
+    return chr(ord(ch) + ord(" "))  #ord(" ") = 32 ie space between a common & capital of same letter in ASCII table
+  return ch
+
+print(lower("a"))
+print(lower("A"))
 
 
 

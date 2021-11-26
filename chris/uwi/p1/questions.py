@@ -1,4 +1,5 @@
 # Question Pool: https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/results
+# Search: Programming
 
 # Question:
 # Write a program, Fence, to calculate and print the amount and cost of the wire needed to fence a rectangular field. 1 meter of wire costs $25. The program allows the user to enter the length and width of the field in meters.
@@ -552,8 +553,8 @@ def lower(ch):
     return chr(ord(ch) + ord(" "))  #ord(" ") = 32 ie space between a common & capital of same letter in ASCII table
   return ch
 
-print(lower("a"))
-print(lower("A"))
+# print(lower("a"))
+# print(lower("A"))
 
 
 
@@ -566,7 +567,17 @@ print(lower("A"))
 # Write code to generate and print the numbers of this sequence: -4, 3, 10, 17, 24, 31, 38, 45.
 # Also find and print the sum of the sequence.
 
+def plus7():
+  x = -4
+  sum = 0
+  while x <= 45 :
+    print (x)
+    sum += x
+    x += 7
+  print(sum)
+plus7()
 
+  
 
 
 
@@ -613,3 +624,141 @@ print(lower("A"))
 # Q2a
 # Write a function which, given an integer n, returns the number of digits in the integer.
 # For example, given 5017, the function returns 4.
+
+
+
+
+
+
+
+# Question.
+# Write a function that prints all times tables from 1 to 12 as follows:
+'''
+1 x 1 = 1
+1 x 2 = 2
+...
+1 x 12 = 12
+
+2 x 1 = 2
+2 x 2 = 4
+...
+2 x 12 = 24
+
+...
+
+12 x 1 = 12
+...
+12 x 12 = 144
+
+'''
+
+def tables():
+  for i in range(1, 13):
+    for j in range(1, 13):
+      print( i, 'x', j, '=', i*j)
+    print()
+tables()
+
+
+
+
+# Question.
+# There are n lockers numbered 1 to n arranged in a row.
+# Initally they are all closed.
+# Starting with locker 2, all even numbered lockers are open.
+# Next, starting with locker 3, and visiting every third locker, it is closed if it is open, and vice versa.
+# This procedure is repeated for every 4th locker, then every 5th locker, and so on, up to the nth locker.
+# Write a function that accepts n and returns the number of lockers that are closed at the end of the procedure.
+
+def lockers(n):
+  # False = closed
+  # True = open
+  # for i in range(1, n+1):
+  #   i = False
+  # for i in range(2, n+1, 2):
+  #   i = True
+  lockers = [False]*(n+1)  # indices: 0 -> n, List you want: 1 -> n
+  # print(lockers)
+  for i in range(2, n+1):
+      for j in range(2, n+1):
+        
+    # if i = True:
+    #   i = False
+    # if i = False:
+    #   i = True
+    # i += 1
+        
+lockers(10)
+
+
+
+
+
+
+
+# Question:
+# Write a function that accepts a two dimensional array and prints all the values in the array.
+# Return the sum of all the positive values in the array.
+
+
+
+
+
+
+# Question.
+# Write a function that accepts two matrices and returns the result of their matrix addition.
+
+
+
+
+# Question.
+# Write a function that accepts two matrices and returns the matrix product.
+
+
+
+
+
+
+# Question.
+# https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1602_1_18.pdf
+# Basically the whole paper.
+
+
+
+
+
+
+# Question.
+# https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1602_1_19.pdf
+# Q3
+
+
+
+
+
+
+
+# Question: Pixels (structs)
+# https://libraries.sta.uwi.edu/apps/index.php/PastPaperSearch/viewPaper/comp1602_2_17.pdf
+# Q2
+
+
+
+
+
+
+
+
+# Question
+# Write a recursive function that accepts an integer n and prints the digits in the reverse order.
+
+
+
+
+# Question
+# Write a recursive function that accepts an integer n and returns a new integer with the digits reversed.
+
+
+
+
+

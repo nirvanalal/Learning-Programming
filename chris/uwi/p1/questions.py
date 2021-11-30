@@ -575,7 +575,7 @@ def plus7():
     sum += x
     x += 7
   print(sum)
-plus7()
+# plus7()
 
   
 
@@ -657,7 +657,7 @@ def tables():
     for j in range(1, 13):
       print( i, 'x', j, '=', i*j)
     print()
-tables()
+# tables()
 
 
 
@@ -677,18 +677,28 @@ def lockers(n):
   #   i = False
   # for i in range(2, n+1, 2):
   #   i = True
+  count = 0
   lockers = [False]*(n+1)  # indices: 0 -> n, List you want: 1 -> n
   # print(lockers)
   for i in range(2, n+1):
-      for j in range(2, n+1):
-        
+      for j in range(i, n+1, i):
+        lockers[j] = not lockers[j]
+      print(lockers[1:])
+  
+  for i in range(1, n+1):
+    if not lockers[i]:
+      count += 1
+  return count
+
+
+print(lockers(10))
+
     # if i = True:
     #   i = False
     # if i = False:
     #   i = True
     # i += 1
-        
-lockers(10)
+      
 
 
 

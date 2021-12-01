@@ -625,8 +625,15 @@ def plus7():
 # Write a function which, given an integer n, returns the number of digits in the integer.
 # For example, given 5017, the function returns 4.
 
-
-
+def digits(n):
+  count = 0
+  while n != 0:
+    count += 1
+    n = n//10
+  else: 
+    count = 1
+  print(count)
+digits(-123)
 
 
 
@@ -691,7 +698,7 @@ def lockers(n):
   return count
 
 
-print(lockers(10))
+# print(lockers(10))
 
     # if i = True:
     #   i = False

@@ -626,16 +626,17 @@ def plus7():
 # For example, given 5017, the function returns 4.
 
 def digits(n):
+  if n == 0:
+    return 1
   count = 0
-  while n != 0:
+  if n < 0:
+    n = n*-1
+  while n > 0:
     count += 1
     n = n//10
-  else: 
-    count = 1
-  print(count)
-digits(-123)
+  return count
 
-
+# print(digits(5017))
 
 
 # Question.
@@ -697,7 +698,6 @@ def lockers(n):
       count += 1
   return count
 
-
 # print(lockers(10))
 
     # if i = True:
@@ -709,7 +709,29 @@ def lockers(n):
 
 
 
+def multi_dim_arrays():
+  A = []
+  B = [1]
+  C = [1, 2]
+  D = [[1],
+       [2]]
+  E = [[1, 2], [3, 4]]
+  F = [
+    [[255, 0, 0], [0, 255, 0], [0, 0, 255]],
+    [[255, 0, 0], [0, 255, 0], [0, 0, 255]],
+    [[255, 0, 0], [0, 255, 0], [0, 0, 255]]
+  ]
+  for row in F:
+    for col in row:
+      for val in col:
+        print(val)
 
+  for i, _ in enumerate(F):
+    for j, _ in enumerate(F[i]):
+      for k, _ in enumerate(F[i][j]):
+        print(F[i][j][k])
+
+# multi_dim_arrays()
 
 
 
@@ -717,13 +739,35 @@ def lockers(n):
 # Write a function that accepts a two dimensional array and prints all the values in the array.
 # Return the sum of all the positive values in the array.
 
+def print_2d_list(A):
+  for row in A:
+    for col in row:
+      print(col)
 
+# print_2d_list([[1, 2], [3, 4]])
+'''
+1
+2
+3
+4
+'''
+  
 
+def multi_returns():
+  return 1, 2, "not chris"  # returns a tuple
+# print(multi_returns())
+# val1, val2, val3 = multi_returns()  # unpacking
+# print(val1)
+# val1, *val2 = multi_returns()  # unknown amount
+# print(val1, val2)
 
 
 
 # Question.
 # Write a function that accepts two matrices and returns the result of their matrix addition.
+def add(A, B):
+  pass
+
 
 
 

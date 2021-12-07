@@ -75,10 +75,24 @@ def sum(n):
 
 # Q: RETURN the product of the numbers from 1 to 10.
 
+def product(n):
+  # Base case:
+  if n == 0:
+    return 1
+  # Recursion case:
+  return n*product(n-1)
+# print(product(3))
 
 # Q: PRINTS the digits in an int "n" one on each line.
 
+def print_int_digits(n):
+  if n == 0:
+    return 0
+  else:
+    print(n%10)
+    print(print_int_digits(n//10))
 
+# print_int_digits(1234)
 # Q: PRINTS the digits in an int "n" one digit on each line, in reversed order.
 
 
@@ -87,4 +101,18 @@ def sum(n):
 
 # Q: Print the following sequence:
 # 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
+
+# 0 (+1) 1 (+0) 1 (+1) 2 (+1) 3 (+2) 5 (+3) 8 (+5) 13 (+8) 21 (+13) 34 (+21) 55 (+34) 89 (+55) 144
+
+# n = (n-2)+(n-1)
+
+def fibonacci_of(n):
+  # Base case
+  if n in {0, 1}:
+    print(n)
+    # Recursion
+  else:
+    print(fibonacci_of(n-2) + fibonacci_of(n-1))
+[fibonacci_of(n) for n in range(13)]
+
 

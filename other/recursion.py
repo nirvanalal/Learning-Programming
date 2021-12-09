@@ -72,7 +72,6 @@ def sum(n):
 # print(sum(3))
 
 
-
 # Q: RETURN the product of the numbers from 1 to 10.
 
 def product(n):

@@ -86,14 +86,21 @@ def product(n):
 
 def print_int_digits(n):
   if n == 0:
-    return 0
-  else:
-    print(n%10)
-    print(print_int_digits(n//10))
-
+    return
+  print_int_digits(n//10)
+  print(n%10)
+  
 # print_int_digits(1234)
+
 # Q: PRINTS the digits in an int "n" one digit on each line, in reversed order.
 
+def print_int_digits(n):
+  if n == 0:
+    return
+  print(n%10)
+  print_int_digits(n//10)
+
+# print_int_digits(1234)
 
 # Q: RETURNS an int n with the digits in reversed order.
 
@@ -108,10 +115,8 @@ def print_int_digits(n):
 def fibonacci_of(n):
   # Base case
   if n in {0, 1}:
-    print(n)
-    # Recursion
+    return n
   else:
-    print(fibonacci_of(n-2) + fibonacci_of(n-1))
-[fibonacci_of(n) for n in range(13)]
-
+    return fibonacci_of(n-2) + fibonacci_of(n-1)
+print([fibonacci_of(n) for n in range(13)])
 

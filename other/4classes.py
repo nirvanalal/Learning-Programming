@@ -30,7 +30,7 @@ class Car:
     self.on = False
 
 
-if name == "__main__":
+if __name__ == "__main__":
   car = Car(4, 5, 2, 50)  # using the class to make an object / instance.
   print(car.num_wheels)
   car.num_wheels = 6

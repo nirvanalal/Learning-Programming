@@ -42,6 +42,12 @@ class LinkedList:
     pass    
 
   def insert_at(self, num, index):
+    if self.head = None:
+      print("List empty")
+      return
+    if
+    node.next = Node(index)
+    
     pass
   
   def delete(self, num):

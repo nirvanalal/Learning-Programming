@@ -1,7 +1,9 @@
 class Node:
   def __init__(self, num):
-    self.num = num
-    self.next = None
+    # Data in this Node.
+    self.num = num # Defining & initialising 'num'
+    # Reference to the next node.
+    self.next = None # Defining 'next'
 
 # JamBoard - https://jamboard.google.com/d/1cnlQ8HecdyQ_ua1FVaNPO7DN6F_oa6r2t5IGbXmUaxo/viewer?f=10
 
@@ -23,32 +25,68 @@ class LinkedList:
     print("None")
   
   def prepend(self, num):
-    node = Node(num)
-    node.next = self.head
-    self.head = node
+    '''
+    head -> Node(1) -> Node(2) -> None
+
+    Step 1:
+    new_node -> Node(0) -> None
+
+    ===
+
+    Step 2:
+
+                head -> Node(1) -> Node(2) -> None
+                          ^
+                          |
+    new_node -> Node(0) - |
+
+
+    ===
+
+    Step 3:
+
+                head   Node(1) -> Node(2) -> None
+                   |      ^
+                   V      |
+    new_node -> Node(0)-- |
+
+    '''
+    new_node = Node(num)
+    new_node.next = self.head
+    self.head = new_node
     
   def append(self, num):
-    node = Node(num)
+    new_node = Node(num)
 
     if self.head is None:
-      self.head = node
+      self.head = new_node
+      return
 
     curr = self.head
     while curr.next != None:
       curr = curr.next
-    curr.next = node
+    curr.next = new_node
 
   def length(self):
-    pass    
-
-  def insert_at(self, num, index):
-    if self.head = None:
-      print("List empty")
+    len = 0
+    if self.head is None:
+      len = 0
       return
-    if
-    node.next = Node(index)
+
+    curr = self.head
+    while curr.next != None:
+      len += 1
+    return
+
+
+  # def insert_at(self, num, index):
+  #   if self.head == None:
+  #     print("List empty")
+  #     return
+  #   if
+  #   node.next = Node(index)
     
-    pass
+  #   pass
   
   def delete(self, num):
     # https://www.geeksforgeeks.org/linked-list-set-3-deleting-node/
@@ -84,4 +122,6 @@ linked_list.print()
 linked_list.prepend(1)
 linked_list.print()
 linked_list.append(4)
+linked_list.print()
+linked_list.length()
 linked_list.print()

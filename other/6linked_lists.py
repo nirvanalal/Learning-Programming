@@ -71,37 +71,80 @@ class LinkedList:
     len = 0
     if self.head is None:
       len = 0
-      return
-
+      return len
+    
     curr = self.head
     while curr.next != None:
+      curr = curr.next
       len += 1
-    return
+    len += 1
+    return len
 
+  def length2(self):
+    len = 0
+    curr = self.head
+    while curr != None:
+      curr = curr.next
+      len += 1
+    return len
 
-  # def insert_at(self, num, index):
-  #   if self.head == None:
-  #     print("List empty")
-  #     return
-  #   if
-  #   node.next = Node(index)
-    
-  #   pass
+  def insert_at(self, num, index):
+    '''
+    Cases:
+    0. Insert at head
+    1. Empty List
+    2. If index >= len(list)
+    3. Insert somewhere in the middle
+    '''
+    i = 0
+    new_node = Node(num)
+    prev = None
+    curr = self.head
+    while curr != None and i < index:
+      prev = curr
+      curr = curr.next
+      i += 1
+
+    new_node.next = curr
+    if curr == self.head:
+      self.head = new_node
+    else:
+      prev.next = new_node    
+
   
-  def delete(self, num):
+  def delete(self, num): 
     # https://www.geeksforgeeks.org/linked-list-set-3-deleting-node/
-    pass
-  
+    curr = self.head
+    prev = None
+    while curr != None and curr.num != num:
+      prev = curr
+      curr = curr.next
+    if curr == None:
+      return
+    if curr == self.head:
+      self.head = curr.next
+    else:
+      prev.next = curr.next
+    del curr
+
+
   def delete_at(self, index):
     # https://www.geeksforgeeks.org/delete-a-linked-list-node-at-a-given-position/
+    
     pass
 
-  def recursive_print():
-    pass
+  def recursive_print(self, curr):
+    # Base case - empty list:
+    if curr == None:
+      return
+    # Recursive case:
+    print(curr.num)
+    self.recursive_print(curr.next)
 
-
-  def recursive_length(self):
-    pass
+  def recursive_length(self, curr):
+    if curr == None:
+      return 0
+    return 1 + self.recursive_length(curr.next)
   
   def sort(self):
     pass
@@ -113,15 +156,44 @@ linked_list = LinkedList()  # H -> None
 
 # Initial: H -> 1 -> 2 -> 3 -> None
 # Prepend: H -> 0 -> 1 -> 2 -> 3 -> None
+if __name__ == "__main__":
+  linked_list.print()
+  linked_list.prepend(3)
+  linked_list.print()
+  linked_list.prepend(2)
+  linked_list.print()
+  linked_list.prepend(1)
+  linked_list.print()
+  linked_list.append(4)
+  linked_list.print()
+  print(linked_list.length())
+  linked_list.insert_at(0, 0)
+  linked_list.print()
+  linked_list.insert_at(1.5, 2)
+  linked_list.print()
+  linked_list.insert_at(5, 10)
+  linked_list.print()
 
-linked_list.print()
-linked_list.prepend(3)
-linked_list.print()
-linked_list.prepend(2)
-linked_list.print()
-linked_list.prepend(1)
-linked_list.print()
-linked_list.append(4)
-linked_list.print()
-linked_list.length()
-linked_list.print()
+  #New list
+  ll2 = LinkedList()
+  # ll2.insert_at(1, 0)
+  ll2.print()
+  ll2.delete(1.5)
+  ll2.print()
+  ll2.append(1)
+  ll2.print()
+  ll2.delete(1)
+  ll2.print()
+
+
+  linked_list.delete(0)
+  linked_list.print()
+  linked_list.delete(1.5)
+  linked_list.print()
+  linked_list.delete(5)
+  linked_list.print()
+  linked_list.delete(6)
+  linked_list.print()
+
+  linked_list.recursive_print(linked_list.head)
+

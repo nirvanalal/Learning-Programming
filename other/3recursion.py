@@ -118,5 +118,5 @@ def fibonacci_of(n):
     return n
   else:
     return fibonacci_of(n-2) + fibonacci_of(n-1)
-print([fibonacci_of(n) for n in range(13)])
+print([fibonacci_of(n) for n in range(1)])
 
